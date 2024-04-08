@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <title>Practice 2</title>
+    <style>
+        #paragraph {
+            border-style: solid;
+            border-width: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice 2</h1>
+    <div id="paragraph">
+        This paragraph is written for the purpose of completion of this lab. I don't know what to write.
+    </div>
+
+    <script>
+        function changeColorAndBorder() {
+            var borderR = document.getElementById("border_R").value;
+            var borderG = document.getElementById("border_G").value;
+            var borderB = document.getElementById("border_B").value;
+            var borderWidth = document.getElementById("border_width").value;
+            var paragraphR = document.getElementById("paragraph_R").value;
+            var paragraphG = document.getElementById("paragraph_G").value;
+            var paragraphB = document.getElementById("paragraph_B").value;
+
+            var paragraph = document.getElementById("paragraph");
+            paragraph.style.borderColor = "rgb(" + borderR + "," + borderG + "," + borderB + ")";
+            paragraph.style.borderWidth = borderWidth + "px";
+            paragraph.style.color = "rgb(" + paragraphR + "," + paragraphG + "," + paragraphB + ")";
+        }
+    </script>
+
+    <p>Input RGB values to form colors for the paragraph above and its border.</p>
+    <p>Also provide a value for border width.</p>
+    Border R(0-255): <input type="text" id="border_R" value=""> <br>
+    Border G(0-255): <input type="text" id="border_G" value=""> <br>
+    Border B(0-255): <input type="text" id="border_B" value=""> <br>
+    Border Width: <input type="text" id="border_width" value=""> <br>
+    Paragraph R(0-255): <input type="text" id="paragraph_R" value=""> <br>
+    Paragraph G(0-255): <input type="text" id="paragraph_G" value=""> <br>
+    Paragraph B(0-255): <input type="text" id="paragraph_B" value=""> <br>
+    <button onclick="changeColorAndBorder()">Change</button> <br>
+</body>
+
+</html>

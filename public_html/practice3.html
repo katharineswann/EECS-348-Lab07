@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <h1>Practice 3</h1>
+</head>
+
+<body>
+    <button onclick="main()">Verify Passwords</button>
+</body>
+
+<script>
+    function getPassword() {
+        return prompt("Enter password:");
+    }
+
+    function validatePassword(password1, password2) {
+        if (password1.length < 8 || password1 !== password2) {
+            return false;
+        }
+        return true;
+    }
+
+    function main() {
+        var password1 = getPassword();
+        var password2 = getPassword();
+
+        if (validatePassword(password1, password2)) {
+            alert("Passwords matched!");
+        } else {
+            alert("Alert! Password is not at least eight characters long or two passwords are different.");
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <h1>Practice 4</h1>
+</head>
+
+<body>
+    <form action="practice4.php" method="post">
+        Size of the multiplication table: <input type="text" name="size"><br>
+        <input type="submit">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $size = $_POST['size'];
+
+        echo "<h3>Multiplication Table for $size</h3>";
+        echo "<table border='1'>";
+        echo "<tr><th>&times;</th>";
+
+        for ($col = 1; $col <= $size; $col++) {
+            echo "<th>$col</th>";
+        }
+        echo "</tr>";
+
+        for ($row = 1; $row <= $size; $row++) {
+            echo "<tr><th>$row</th>";
+            for ($col = 1; $col <= $size; $col++) {
+                echo "<td>" . ($row * $col) . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+    ?>
+</body>
+
+</html>
